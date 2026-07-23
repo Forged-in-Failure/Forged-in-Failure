@@ -41,3 +41,7 @@ This is a rotating-task team rather than siloed roles. Contributors move across 
 
 - **Engine:** Godot / GDScript
 - **Design documentation:** Vault (game concepts, lore, character files, dialogue, quest scripts)
+
+## Docs
+
+- **[Credits](Credits.md)**
