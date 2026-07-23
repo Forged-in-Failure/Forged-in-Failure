@@ -42,6 +42,7 @@ This is a rotating-task team rather than siloed roles — contributors move acro
 - **Engine:** Godot / GDScript
 - **Design documentation:** Obsidian Vault (game concepts, lore, character files, dialogue, quest scripts)
 - **Team communication:** Discord — [discord.gg/3d6NCuME7N](https://discord.gg/3d6NCuME7N)
+<<<<<<< HEAD
 
 ## Contributing
 
@@ -51,3 +52,5 @@ We're actively recruiting GDScript developers. If you're interested, join the Di
 
 *Onward,*
 *Karim Elabbasi (NPC), @ Forged in Failure*
+=======
+>>>>>>> 9b92735 (Added files to make the repository cleaner and more 'Github compatible')
