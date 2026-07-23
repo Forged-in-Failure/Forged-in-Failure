@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://du1xuwhbsaoem"]
+
+[ext_resource type="Texture2D" uid="uid://ltuef1cqfnc0" path="res://Prototype Textures/PNG/Dark/texture_01.png" id="2_js7pq"]
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/Player.tscn" id="3_eu7l1"]
+[ext_resource type="Material" uid="uid://7wuop4abysij" path="res://Sky/materials/SkyMaterial.tres" id="3_fv4w7"]
+[ext_resource type="Script" uid="uid://dvfma7h1dahon" path="res://daynight.gd" id="3_fvag4"]
+[ext_resource type="PackedScene" uid="uid://22jq2ny5boyj" path="res://Sky/scenes/Sky.tscn" id="4_fvag4"]
+[ext_resource type="Script" uid="uid://dwc1pcklhtb1t" path="res://cycling.gd" id="4_p1v5b"]
+[ext_resource type="Shader" uid="uid://d1uo1f8xts5bv" path="res://filmgrain.gdshader" id="5_fv4w7"]
+[ext_resource type="PackedScene" uid="uid://b1234568aaccc" path="res://UI/Inventory.tscn" id="5_wygdx"]
+[ext_resource type="PackedScene" uid="uid://4bfsjivpw3aa" path="res://UI/Stats.tscn" id="6_wygdx"]
+[ext_resource type="PackedScene" uid="uid://b1234568aaaaa" path="res://UI/Gameplay.tscn" id="7_wygdx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1v5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wygdx"]
+albedo_texture = ExtResource("2_js7pq")
+uv1_scale = Vector3(30, 20, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bah7m"]
+
+[sub_resource type="Sky" id="Sky_kqs1s"]
+sky_material = ExtResource("3_fv4w7")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_kva58"]
+background_mode = 2
+sky = SubResource("Sky_kqs1s")
+ambient_light_color = Color(0.933594, 0.846958, 0.800123, 1)
+ambient_light_sky_contribution = 0.933077
+ambient_light_energy = 0.0
+tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_contrast = 1.15
+adjustment_saturation = 0.9
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_f5c0m"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 30.0
+dof_blur_amount = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fvag4"]
+shader = ExtResource("5_fv4w7")
+shader_parameter/grain_amount = 0.05
+shader_parameter/grain_speed = 12.0
+
+[node name="Node3D" type="Node3D" unique_id=280479089]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=517138562]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1729142454]
+mesh = SubResource("BoxMesh_p1v5b")
+surface_material_override/0 = SubResource("StandardMaterial3D_wygdx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1291227360]
+shape = SubResource("BoxShape3D_bah7m")
+debug_fill = false
+
+[node name="Player" parent="." unique_id=1179930937 instance=ExtResource("3_eu7l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 6, 0)
+SPEED = 3.75
+SPRINT_MULTIPLIER = 1.75
+IDLE_SWAY_AMOUNT = 0.008
+
+[node name="Sky" type="Node3D" parent="." unique_id=1288202653]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
+script = ExtResource("3_fvag4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sky" unique_id=237467557]
+environment = SubResource("Environment_kva58")
+camera_attributes = SubResource("CameraAttributesPractical_f5c0m")
+
+[node name="Sun" type="DirectionalLight3D" parent="Sky" unique_id=1344387490]
+transform = Transform3D(1, 0, 0, 0, 0.9762283, 0.21674544, 0, -0.21674544, 0.9762283, 0, 0, 0)
+light_color = Color(1, 0.8861766, 0.7936261, 1)
+light_angular_distance = 1.5
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="Sky" unique_id=1486727264]
+transform = Transform3D(0.16094995, -0.5227911, 0.83712876, 0.08725907, 0.85240304, 0.5155531, -0.9830976, -0.009931155, 0.1828125, 0, 0, 0)
+light_energy = 0.6
+light_angular_distance = 21.1
+light_cull_mask = 4293918720
+
+[node name="Sky" parent="Sky" unique_id=1070840823 instance=ExtResource("4_fvag4")]
+time_of_day = 1.0
+latitude = 0.0
+
+[node name="Film" type="CanvasLayer" parent="." unique_id=104763706]
+
+[node name="ColorRect" type="ColorRect" parent="Film" unique_id=500470810]
+material = SubResource("ShaderMaterial_fvag4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=816004349]
+script = ExtResource("4_p1v5b")
+
+[node name="InventoryWindow" parent="UI" unique_id=1797985031 instance=ExtResource("5_wygdx")]
+
+[node name="StatsWindow" parent="UI" unique_id=957907535 instance=ExtResource("6_wygdx")]
+
+[node name="GameplayPauseMenu" parent="UI" unique_id=422659455 instance=ExtResource("7_wygdx")]

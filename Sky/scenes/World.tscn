@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c5jv1nwwmrddf"]
+
+[ext_resource type="Script" uid="uid://bfj34xin564ni" path="res://Sky/scripts/world.gd" id="1_kqs1s"]
+[ext_resource type="PackedScene" uid="uid://22jq2ny5boyj" path="res://Sky/scenes/Sky.tscn" id="2_32lhk"]
+[ext_resource type="Material" uid="uid://7wuop4abysij" path="res://Sky/materials/SkyMaterial.tres" id="2_d1c63"]
+
+[sub_resource type="Sky" id="Sky_kqs1s"]
+sky_material = ExtResource("2_d1c63")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_1lgw5"]
+background_mode = 2
+sky = SubResource("Sky_kqs1s")
+ambient_light_color = Color(0.933594, 0.846958, 0.800123, 1)
+ambient_light_sky_contribution = 0.933077
+ambient_light_energy = 0.0
+tonemap_mode = 3
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_contrast = 1.15
+adjustment_saturation = 0.9
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_hdkv3"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 30.0
+dof_blur_amount = 0.03
+
+[node name="World" type="Node3D" unique_id=2126013202]
+script = ExtResource("1_kqs1s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=18132911]
+environment = SubResource("Environment_1lgw5")
+camera_attributes = SubResource("CameraAttributesPractical_hdkv3")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=43999305]
+transform = Transform3D(1, 0, 0, 0, 0.8868661, 0.46202648, 0, -0.46202648, 0.8868661, 0, 0, 0)
+light_color = Color(1, 0.8861766, 0.7936261, 1)
+light_angular_distance = 1.5
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=930728183]
+transform = Transform3D(0.16095, -0.522791, 0.837129, 0.0872591, 0.852403, 0.515553, -0.983098, -0.00993116, 0.182813, 0, 0, 0)
+light_energy = 0.6
+light_angular_distance = 21.1
+light_cull_mask = 4293918720
+
+[node name="Sky" parent="." unique_id=1463019895 node_paths=PackedStringArray("environment", "sun") instance=ExtResource("2_32lhk")]
+time_of_day = 1.0
+latitude = 0.0
+environment = NodePath("../WorldEnvironment")
+sun = NodePath("../Sun")

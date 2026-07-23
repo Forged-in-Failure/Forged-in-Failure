@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://byque4w54oowj"]
+
+[ext_resource type="Script" uid="uid://bjl8lmh7441nv" path="res://Player/player.gd" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://btxgvgv4pceys" path="res://Player/motionblur.gd" id="2_q3lat"]
+[ext_resource type="Script" uid="uid://bucc64ibgd8v2" path="res://Player/crosshairhide.gd" id="3_tok1r"]
+[ext_resource type="PackedScene" uid="uid://cbqmwd5fbvg8t" path="res://PlayerModel/PlayerModel.tscn" id="4_ddoul"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1179930937]
+script = ExtResource("1_3qydi")
+SPEED = 5.5
+SPRINT_FOV = 120.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1349477924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_q3lat")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=567319740]
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="." unique_id=22554105]
+
+[node name="WindAudio" type="AudioStreamPlayer" parent="." unique_id=373169714]
+
+[node name="ThudAudio" type="AudioStreamPlayer" parent="." unique_id=682135731]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1360164902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.6, 0)
+spring_length = 2.5
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=242018573]
+fov = 100.0
+script = ExtResource("2_q3lat")
+strength = 0.001
+
+[node name="Crosshair" type="Label" parent="SpringArm3D/Camera3D" unique_id=1175532955]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_tok1r")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=651734496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.5)
+fov = 100.0
+script = ExtResource("2_q3lat")
+strength = 0.001
+
+[node name="Crosshair" type="Label" parent="Camera3D" unique_id=1949224083]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_tok1r")
+metadata/_edit_use_anchors_ = true
+
+[node name="John FiF" parent="." unique_id=1666879417 instance=ExtResource("4_ddoul")]

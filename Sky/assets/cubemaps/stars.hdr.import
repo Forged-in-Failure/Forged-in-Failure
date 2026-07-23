@@ -1,0 +1,27 @@
+[remap]
+
+importer="cubemap_texture"
+type="CompressedCubemap"
+uid="uid://bs78evs1saajk"
+path="res://.godot/imported/stars.hdr-296cbde81fcf53879cd8f0d1840e4ced.ccube"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Sky/assets/cubemaps/stars.hdr"
+dest_files=["res://.godot/imported/stars.hdr-296cbde81fcf53879cd8f0d1840e4ced.ccube"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=true
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/arrangement=3

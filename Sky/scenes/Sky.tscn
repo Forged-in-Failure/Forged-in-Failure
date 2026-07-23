@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://22jq2ny5boyj"]
+
+[ext_resource type="Script" uid="uid://dvap5rdyp651w" path="res://scripts/sky.gd" id="1_ag4jm"]
+
+[node name="Sky" type="Node"]
+script = ExtResource("1_ag4jm")
+time_of_day = 0.737
