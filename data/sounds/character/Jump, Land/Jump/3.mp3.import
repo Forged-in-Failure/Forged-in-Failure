@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cswcq5o3k8j6x"
+path="res://.godot/imported/3.mp3-61fc8bf521656de716515d29e08c2027.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Human/Jump, Land/Jump/3.mp3"
+dest_files=["res://.godot/imported/3.mp3-61fc8bf521656de716515d29e08c2027.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
