@@ -2,7 +2,7 @@
 
 Forged in Failure is an indie RPG set in the Skylite Isles. The Skylite Isles are a fog-covered floating archipelago with no formal government. Society's outcasts live there. The project started on Roblox and Luau. The team then moved the full project to Godot and GDScript. The team made this move because of Roblox's weak moderation, platform neglect, and habit of putting features behind a paywall after the features were free.
 
-![Watchtower concept render](./watchtower.png)
+![Watchtower concept render](./data/images/app/watchtower.png)
 
 ## About
 
