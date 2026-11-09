@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dc7chgruvn5ub"]
+
+[ext_resource type="PackedScene" uid="uid://c5jv1nwwmrddf" path="res://data/resources/sky/world.tscn" id="1_ayfke"]
+[ext_resource type="PackedScene" uid="uid://ofii2pi4bqb0" path="res://scenes/player/Player.tscn" id="2_6twsn"]
+
+[node name="FixedWorld" type="Node3D" unique_id=1449571236]
+
+[node name="World" parent="." unique_id=2126013202 instance=ExtResource("1_ayfke")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World" unique_id=1428082326]
+transform = Transform3D(31.427084, 0, 0, 0, 1, 0, 0, 0, 31.089748, 0, -1.2197424, 0)
+use_collision = true
+
+[node name="Player" parent="World" unique_id=1179930937 instance=ExtResource("2_6twsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25423813, 0, -0.48006058)

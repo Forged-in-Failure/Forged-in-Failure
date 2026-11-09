@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://vrydunkdf64r"]
+
+[ext_resource type="PackedScene" uid="uid://b3nlg30cbjs65" path="res://PlayerModel/John FiF.tscn" id="1_i8hem"]
+
+[node name="John FiF" unique_id=363643860 instance=ExtResource("1_i8hem")]

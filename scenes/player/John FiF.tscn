@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://d08n22656sitw"]
+[gd_scene format=3 uid="uid://c384wmyjvltc7"]
 
-[ext_resource type="PackedScene" uid="uid://5oshwyesrq2d" path="res://PlayerModel/John FiF but he's static.glb" id="1_qgyir"]
+[ext_resource type="PackedScene" uid="uid://5oshwyesrq2d" path="res://PlayerModel/John FiF id="1_qgyir"]
 
 [sub_resource type="Animation" id="Animation_e0sa8"]
 resource_name = "Idle"

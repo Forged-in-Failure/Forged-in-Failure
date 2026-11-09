@@ -1,8 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://7wuop4abysij"]
 
-[ext_resource type="Shader" uid="uid://r8odr1qaq8tv" path="res://Sky/shaders/atmosphere.gdshader" id="1_befvq"]
-[ext_resource type="CompressedCubemap" uid="uid://bs78evs1saajk" path="res://Sky/assets/cubemaps/stars.hdr" id="2_kqxb2"]
-[ext_resource type="Texture2D" uid="uid://bdvkmjuer3q65" path="res://Sky/assets/moon/moon.png" id="2_xqwns"]
+[ext_resource type="Shader" uid="uid://cb0faosc3hgxy" path="res://shaders/atmosphere.gdshader" id="1_befvq"]
+[ext_resource type="Texture2D" uid="uid://ccultgtjqc7hx" path="res://data/resources/sky/assets/moon/moon.png" id="2_xqwns"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_n8vuu"]
 seed = 2
@@ -80,7 +79,6 @@ shader_parameter/atmosphere_density = 1.0
 shader_parameter/exposure = 13.0
 shader_parameter/sun_disc_feather = 0.5
 shader_parameter/sundisc_intensity = 30.0
-shader_parameter/stars_hdr = ExtResource("2_kqxb2")
 shader_parameter/stars_exposure = 3.0
 shader_parameter/stars_rotation = Basis(1, 0, 0, 0, 0.043306287, 0.9990618, 0, -0.9990618, 0.043306287)
 shader_parameter/dim_stars_at_day = true

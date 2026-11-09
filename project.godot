@@ -15,6 +15,10 @@ run/main_scene="uid://du1xuwhbsaoem"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://5uhlyfai14c0"
 
+[autoload]
+
+PublicFunctions="*uid://dfpr6wq4m7tuc"
+
 [display]
 
 window/size/mode=4
@@ -75,5 +79,4 @@ anti_aliasing/quality/msaa_3d=3
 
 [xr]
 
-openxr/enabled=true
 shaders/enabled=true

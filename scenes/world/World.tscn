@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://du1xuwhbsaoem"]
 
 [ext_resource type="Texture2D" uid="uid://ltuef1cqfnc0" path="res://Prototype Textures/PNG/Dark/texture_01.png" id="2_js7pq"]
-[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/Player.tscn" id="3_eu7l1"]
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://scenes/player/Player.tscn" id="3_eu7l1"]
 [ext_resource type="Material" uid="uid://7wuop4abysij" path="res://Sky/materials/SkyMaterial.tres" id="3_fv4w7"]
-[ext_resource type="Script" uid="uid://dvfma7h1dahon" path="res://daynight.gd" id="3_fvag4"]
+[ext_resource type="Script" uid="uid://dvfma7h1dahon" path="res://scripts/player/daynight.gd" id="3_fvag4"]
 [ext_resource type="PackedScene" uid="uid://22jq2ny5boyj" path="res://Sky/scenes/Sky.tscn" id="4_fvag4"]
-[ext_resource type="Script" uid="uid://dwc1pcklhtb1t" path="res://cycling.gd" id="4_p1v5b"]
-[ext_resource type="Shader" uid="uid://d1uo1f8xts5bv" path="res://filmgrain.gdshader" id="5_fv4w7"]
+[ext_resource type="Script" uid="uid://dwc1pcklhtb1t" path="res://scripts/sky/cycling.gd" id="4_p1v5b"]
+[ext_resource type="Shader" uid="uid://d1uo1f8xts5bv" path="res://shaders/filmgrain.gdshader" id="5_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://b1234568aaccc" path="res://UI/Inventory.tscn" id="5_wygdx"]
 [ext_resource type="PackedScene" uid="uid://4bfsjivpw3aa" path="res://UI/Stats.tscn" id="6_wygdx"]
 [ext_resource type="PackedScene" uid="uid://b1234568aaaaa" path="res://UI/Gameplay.tscn" id="7_wygdx"]
@@ -60,11 +60,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wygdx")
 shape = SubResource("BoxShape3D_bah7m")
 debug_fill = false
 
-[node name="Player" parent="." unique_id=1179930937 instance=ExtResource("3_eu7l1")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 6, 0)
-SPEED = 3.75
-SPRINT_MULTIPLIER = 1.75
-IDLE_SWAY_AMOUNT = 0.008
 
 [node name="Sky" type="Node3D" parent="." unique_id=1288202653]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)

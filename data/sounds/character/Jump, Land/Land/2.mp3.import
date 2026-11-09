@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cds0oxac8ygge"
+path="res://.godot/imported/2.mp3-4cda1e611d5d6c8618af6d7551b7a195.mp3str"
+
+[deps]
+
+source_file="res://data/sounds/character/Jump, Land/Land/2.mp3"
+dest_files=["res://.godot/imported/2.mp3-4cda1e611d5d6c8618af6d7551b7a195.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

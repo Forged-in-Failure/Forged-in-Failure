@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://tjqygr0xgr43"
-path="res://.godot/imported/1.mp3-470b5a0a2bdb1f82b84e1a55ac57115c.mp3str"
+path="res://.godot/imported/1.mp3-d8a8a2c3df62f028a2bbd015db4e08e9.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Human/Footsteps/Concrete/1.mp3"
-dest_files=["res://.godot/imported/1.mp3-470b5a0a2bdb1f82b84e1a55ac57115c.mp3str"]
+source_file="res://data/sounds/character/Footsteps/Concrete/1.mp3"
+dest_files=["res://.godot/imported/1.mp3-d8a8a2c3df62f028a2bbd015db4e08e9.mp3str"]
 
 [params]
 

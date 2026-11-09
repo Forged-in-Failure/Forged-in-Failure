@@ -1,13 +1,9 @@
-@tool
-extends Node
+class_name SkyProperty extends Node
 
 @export_range(0.0, 1.0) var time_of_day := 0.0
 @export_range(-90.0, 90.0, 1.0) var latitude := 45.0
-
-@export var sky_material: ShaderMaterial = preload("res://Sky/materials/SkyMaterial.tres")
-
-@export var environment: WorldEnvironment;
-
+@export var sky_material: ShaderMaterial = preload("res://data/resources/sky/materials/SkyMaterial.tres")
+@export var environment: WorldEnvironment
 @export var sun: DirectionalLight3D
 
 func kelvin_to_rgb(temp_kelvin: float) -> Color:
@@ -47,10 +43,16 @@ func kelvin_to_rgb(temp_kelvin: float) -> Color:
 func _process(_delta: float) -> void:	
 	if sun:
 		sky_material.set_shader_parameter("stars_rotation", sun.global_basis)
-	
 		var sun_weight: float = sun.global_basis.z.normalized().dot(Vector3.UP)
-		var sun_energy = smoothstep(-0.09, -0.00, sun_weight)
+		var sun_energy : float = smoothstep(-0.09, -0.00, sun_weight)
 		sun_weight = pow(clamp(sun_weight, 0.0, 1.0), 0.5)
-		var sun_color = kelvin_to_rgb(lerpf(1500, 6500, sun_weight))
+		
+		#############################
+		# Isto es una HUGE function for a _process function
+		# Principaly on a interpreted language such as gdscript 
+		# Making this in rust or c++ would be a great solution
+		var sun_color = kelvin_to_rgb(lerpf(15000, 65000, sun_weight))
+		############################
+		
 		sun.light_color = sun_color
 		sun.light_energy = sun_energy
